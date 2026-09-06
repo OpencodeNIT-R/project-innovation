@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 
 interface PaintSplatterIntroProps {
   onStart: () => void;
@@ -113,6 +114,7 @@ export default function PaintSplatterIntro({
         ))}
       </div>
 
+     
         {/* Enter Button */}
         <button
           onClick={handleStart}
