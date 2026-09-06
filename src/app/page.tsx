@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import PlanetsCanvas from "@/components/PlanetsCanvas";
 import Navbar from "@/components/Navbar";
+import PaintSplatterIntro from "@/components/PaintSplatterIntro";
 
 export default function Home() {
   const mouseRef = useRef({ targetX: 0, targetY: 0, currentX: 0, currentY: 0 });
