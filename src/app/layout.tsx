@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Outfit } from "next/font/google";
+import { Cinzel, Outfit, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -12,6 +12,16 @@ const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${outfit.variable} h-full antialiased`}
+      className={`${cinzel.variable} ${outfit.variable} ${playfair.variable} ${inter.variable} h-full antialiased`}
     >
       <body className={`${outfit.className} min-h-full flex flex-col bg-[#020712] text-white`}>
         {children}
