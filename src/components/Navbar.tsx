@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X, Volume2, VolumeX } from "lucide-react";
 
 interface NavbarProps {
@@ -12,11 +13,11 @@ export default function Navbar({ isPlaying = false, onToggleAudio }: NavbarProps
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Events", href: "#events" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Merch", href: "#Merch" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Events", href: "/events" },
+    { name: "Gallery", href: "/#gallery" },
+    { name: "Merch", href: "/#Merch" },
   ];
 
   return (
@@ -25,7 +26,7 @@ export default function Navbar({ isPlaying = false, onToggleAudio }: NavbarProps
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10 mx-auto">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className="relative text-xs font-semibold tracking-[0.25em] uppercase text-[#e2e8f0] transition-all duration-300 hover:text-[#fbbf24] hover:drop-shadow-[0_0_10px_rgba(251,191,36,0.65)] group py-1.5 font-serif"
@@ -33,7 +34,7 @@ export default function Navbar({ isPlaying = false, onToggleAudio }: NavbarProps
               {link.name}
               {/* Gold Glint Underline */}
               <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gradient-to-r from-[#fbbf24] to-[#2dd4bf] transition-all duration-300 group-hover:w-full rounded-full shadow-[0_0_8px_#fbbf24]" />
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -79,14 +80,14 @@ export default function Navbar({ isPlaying = false, onToggleAudio }: NavbarProps
       {mobileMenuOpen && (
         <div className="md:hidden fixed top-20 left-4 right-4 rounded-2xl backdrop-blur-2xl bg-[#020712]/90 border border-[#fbbf24]/30 shadow-[0_15px_40px_rgba(0,0,0,0.8)] p-6 flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-300">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-medium tracking-wider text-[#e5e7eb] hover:text-[#fbbf24] transition-colors py-2 border-b border-white/5"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
       )}

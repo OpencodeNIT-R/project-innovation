@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, ChevronLeft } from "lucide-react";
 import dynamic from "next/dynamic";
+import Navbar from "@/components/Navbar";
 
 const EventGlobe = dynamic(() => import("./EventGlobe"), { ssr: false });
 
@@ -114,23 +115,7 @@ export default function EventCarousel() {
       </div>
 
       {/* ===== NAVBAR ===== */}
-      <header className="w-full flex items-center justify-between px-8 md:px-12 py-6 z-30 relative pointer-events-auto">
-        <div className="text-xl md:text-2xl font-bold tracking-widest cursor-pointer" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
-          space<span className="text-cyan-400">edu</span>
-        </div>
-        <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider font-semibold text-gray-400">
-          <a href="#" className="text-white border-b-2 border-cyan-400 pb-1">Planets</a>
-          <a href="#" className="hover:text-white transition-colors">Trailer</a>
-          <a href="#" className="hover:text-white transition-colors">Tickets</a>
-          <a href="#" className="hover:text-white transition-colors">Blog</a>
-          <button className="border border-gray-500 text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition-colors">
-            Enroll
-          </button>
-        </nav>
-      </header>
-
-      {/* Thin divider line under navbar */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent z-30 relative" />
+      <Navbar />
 
       {/* ===== MAIN CONTENT ===== */}
       <main className="flex-grow flex flex-col items-center justify-start pt-[8vh] md:pt-[10vh] relative z-20 px-4 pointer-events-none">
