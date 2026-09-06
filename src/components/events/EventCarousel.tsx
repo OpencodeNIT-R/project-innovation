@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronRight, ChevronLeft } from "lucide-react";
 import dynamic from "next/dynamic";
-import Navbar from "@/components/Navbar";
 
 const EventGlobe = dynamic(() => import("./EventGlobe"), { ssr: false });
 
@@ -113,9 +112,6 @@ export default function EventCarousel() {
       <div className="absolute inset-0 w-full h-full z-10 pointer-events-none">
         <EventGlobe textures={textures} currentIndex={currentIndex} className="w-full h-full pointer-events-auto" />
       </div>
-
-      {/* ===== NAVBAR ===== */}
-      <Navbar />
 
       {/* ===== MAIN CONTENT ===== */}
       <main className="flex-grow flex flex-col items-center justify-start pt-[8vh] md:pt-[10vh] relative z-20 px-4 pointer-events-none">

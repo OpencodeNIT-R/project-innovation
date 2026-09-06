@@ -147,8 +147,6 @@ export default function PlanetsCanvas({ mouseX = 0, mouseY = 0 }: PlanetsCanvasP
     };
     updatePositionsForScreen();
 
-
-
     // 6. Animation Loop with Mouse Parallax
     let animationFrameId: number;
     const animate = () => {
@@ -201,4 +199,3 @@ export default function PlanetsCanvas({ mouseX = 0, mouseY = 0 }: PlanetsCanvasP
     />
   );
 }
-

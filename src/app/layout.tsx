@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Outfit, Playfair_Display, Inter } from "next/font/google";
+import AppShell from "@/components/layout/AppShell";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -25,7 +26,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "INNOVATION",
+  title: "INNOVISION | The Celestial Odyssey",
   description: "Celestial 3D Web Experience",
 };
 
@@ -40,9 +41,8 @@ export default function RootLayout({
       className={`${cinzel.variable} ${outfit.variable} ${playfair.variable} ${inter.variable} h-full antialiased`}
     >
       <body className={`${outfit.className} min-h-full flex flex-col bg-[#020712] text-white`}>
-        {children}
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
 }
-
