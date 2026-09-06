@@ -30,4 +30,55 @@ body {
   font-family: var(--font-outfit);
 }
 
+.ink-mask {
+  mask-image: url("/ink-spread.gif");
+  mask-repeat: no-repeat;
+  mask-size: 350vmax;
+  mask-position: center;
+  -webkit-mask-image: url("/ink-spread.gif");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 350vmax;
+  -webkit-mask-position: center;
+  animation: inkReveal 2.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  height: 100svh;
+  width: 100svw;
+  overflow: hidden;
+}
+
+@keyframes inkReveal {
+  0% {
+    mask-size: 0vmax;
+    -webkit-mask-size: 0vmax;
+  }
+  15% {
+    mask-size: 25vmax;
+    -webkit-mask-size: 25vmax;
+  }
+  50% {
+    mask-size: 100vmax;
+    -webkit-mask-size: 100vmax;
+  }
+  100% {
+    mask-size: 380vmax;
+    -webkit-mask-size: 380vmax;
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+    box-shadow: 0 0 10px currentColor;
+  }
+}
+
+.animate-star-twinkle {
+  animation: starTwinkle var(--twinkle-duration, 3s) infinite ease-in-out var(--twinkle-delay, 0s);
+}
+
+
 
