@@ -11,7 +11,7 @@ export default function RegisterPage() {
     email: "",
     college: "",
     phone: "",
-    track: "web3-ai",
+    suggestions: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -48,7 +48,7 @@ export default function RegisterPage() {
                 <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 animate-bounce">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-amber-100 tracking-wider">
+                <h2 className="text-2xl sm:text-3xl font-bold font-chopsic text-amber-100 tracking-wider">
                   REGISTRATION CONFIRMED!
                 </h2>
                 <p className="text-sm text-slate-300 max-w-md">
@@ -70,7 +70,7 @@ export default function RegisterPage() {
                     <Sparkles className="w-3 h-3" />
                     <span>INNOVISION 2026</span>
                   </div>
-                  <h1 className="text-2xl sm:text-4xl font-bold font-serif tracking-wider text-amber-100 drop-shadow-[0_0_15px_rgba(251,191,36,0.4)]">
+                  <h1 className="text-2xl sm:text-4xl font-bold font-chopsic tracking-wider text-amber-100 drop-shadow-[0_0_15px_rgba(251,191,36,0.4)]">
                     CELESTIAL REGISTRATION
                   </h1>
                   <p className="text-xs sm:text-sm text-slate-400 font-light">
@@ -79,9 +79,9 @@ export default function RegisterPage() {
                 </div>
 
                 {/* Registration Form */}
-                <form onSubmit={handleSubmit} className="space-y-4 pt-2">
+                <form onSubmit={handleSubmit} className="space-y-4 pt-2 font-outfit">
                   <div className="space-y-1">
-                    <label className="text-xs uppercase tracking-wider text-amber-200/80 font-medium">
+                    <label className="text-xs uppercase tracking-wider text-amber-200/80 font-semibold font-exo2">
                       Full Name
                     </label>
                     <input
@@ -90,13 +90,13 @@ export default function RegisterPage() {
                       placeholder="e.g. Alex Vance"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm focus:outline-none focus:border-amber-400/60 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm font-light focus:outline-none focus:border-amber-400/60 transition-colors"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-xs uppercase tracking-wider text-amber-200/80 font-medium">
+                      <label className="text-xs uppercase tracking-wider text-amber-200/80 font-semibold font-exo2">
                         Email Address
                       </label>
                       <input
@@ -105,11 +105,11 @@ export default function RegisterPage() {
                         placeholder="alex@university.edu"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm focus:outline-none focus:border-amber-400/60 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm font-light focus:outline-none focus:border-amber-400/60 transition-colors"
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-xs uppercase tracking-wider text-amber-200/80 font-medium">
+                      <label className="text-xs uppercase tracking-wider text-amber-200/80 font-semibold font-exo2">
                         Phone Number
                       </label>
                       <input
@@ -118,13 +118,13 @@ export default function RegisterPage() {
                         placeholder="+91 9876543210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm focus:outline-none focus:border-amber-400/60 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm font-light focus:outline-none focus:border-amber-400/60 transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs uppercase tracking-wider text-amber-200/80 font-medium">
+                    <label className="text-xs uppercase tracking-wider text-amber-200/80 font-semibold font-exo2">
                       College / University
                     </label>
                     <input
@@ -133,29 +133,27 @@ export default function RegisterPage() {
                       placeholder="NIT Rourkela"
                       value={formData.college}
                       onChange={(e) => setFormData({ ...formData, college: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm focus:outline-none focus:border-amber-400/60 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm font-light focus:outline-none focus:border-amber-400/60 transition-colors"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs uppercase tracking-wider text-amber-200/80 font-medium">
-                      Primary Interest Track
+                    <label className="text-xs uppercase tracking-wider text-amber-200/80 font-semibold font-exo2">
+                      Your suggestions for this year&apos;s inno
                     </label>
-                    <select
-                      value={formData.track}
-                      onChange={(e) => setFormData({ ...formData, track: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm focus:outline-none focus:border-amber-400/60 transition-colors"
-                    >
-                      <option value="web3-ai">Web3 & Artificial Intelligence</option>
-                      <option value="robotics">Robotics & Automation</option>
-                      <option value="design-3d">3D Experience & Game Dev</option>
-                      <option value="hackathon">Flagship 36hr Hackathon</option>
-                    </select>
+                    <textarea
+                      required
+                      rows={3}
+                      placeholder="Share your cosmic ideas..."
+                      value={formData.suggestions}
+                      onChange={(e) => setFormData({ ...formData, suggestions: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-white/10 text-white text-sm font-light focus:outline-none focus:border-amber-400/60 transition-colors resize-none"
+                    />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full mt-6 py-4 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-teal-400 text-slate-950 font-bold text-xs sm:text-sm uppercase tracking-[0.25em] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full mt-6 py-4 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-teal-400 text-slate-950 font-bold font-exo2 text-xs sm:text-sm uppercase tracking-[0.25em] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Complete Registration</span>
                     <Send className="w-4 h-4" />
